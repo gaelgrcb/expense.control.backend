@@ -8,11 +8,12 @@ import lombok.Data;
 
 @Data
 @Entity
-public class expense {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String description;
-    private
+    private String name;
+    private String icon_url;
+    private Long user_id;
 }
