@@ -3,22 +3,17 @@ package com.admin.expense.control.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "payment_methods")
+public class PaymentMethod {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-    private String icon_url;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    @OneToOne(mappedBy = "category", cascade = CascadeType.ALL)
-    private Budget budget;
 }
